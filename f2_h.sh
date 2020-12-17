@@ -8,9 +8,9 @@
 #*    Usage: ./ftp2_hdfs.sh SOURCE_SERVER REMOTE_CTRL_FILE_LOC STAGE_LOC FTP_USER
 #*
 #*	  Example:
-#*			./ftp2_hdfs.sh  $(hostname -f) '~/server/control_file_TEST.csv' '/user/gfolyrep/uno_ref/stage' ob66759
+#*			./ftp2_hdfs.sh  $(hostname -f) '~/server/control_file_TEST.csv' '/user/user_2/project/stage' user_1
 #*
-#*    Author: ob66759
+#*    Author: user_1
 #*
 #************************************************************************************************************
 #set -e
@@ -29,7 +29,7 @@ if [[ ! "${#@}" -eq "4" ]]; then
 #*	  Set OS_PWD: $ . spwd
 #*
 #*	  Example:
-#*			./ftp2_hdfs.sh  $(hostname -f) '~/server/control_file_TEST.csv' '/user/gfolyrep/uno_ref/stage' ob66759
+#*			./ftp2_hdfs.sh  $(hostname -f) '~/server/control_file_TEST.csv' '/user/user_2/project/stage' user_1
 #************************************************************************************************************"	
 	echo "Exiting..."
 	exit 1
@@ -112,10 +112,10 @@ then
 	if TEST; then 
 		SOURCE_SERVER=$(hostname -f)
 		REMOTE_CTRL_FILE_LOC='~/server/control_file_TEST.csv'
-		STAGE_LOC='/user/gfolyrep/uno_ref/stage'
+		STAGE_LOC='/user/user_2/project/stage'
 		REMOTE_CONTROL_FN=$(basename  "$REMOTE_CTRL_FILE_LOC")
 		#LOCAL_CONTROL_FLOC="./in/$LOCAL_CONTROL_FN"
-		SFTP_USERID='ob66759'
+		SFTP_USERID='user_1'
 		NN $sn $LINENO FTP_PWD 0
 		SFTP_PASSWORD="${FTP_PWD}"
 		CTRL_UPLOAD_LOC=$STAGE_LOC
