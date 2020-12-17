@@ -1,0 +1,15 @@
+.idea
+target
+*/spark-warehouse
+*/metastore_db
+*/work
+*.iml
+*.log
+*.jar
+*.class
+*.clean
+*.classpath
+*.project
+*.settings
+*.pyc
+__main__
